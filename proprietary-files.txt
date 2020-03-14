@@ -457,6 +457,9 @@ lib64/libcom_fingerprints_service.so:vendor/lib64/libcom_fingerprints_service.so
 lib64/libfp_client.so:vendor/lib64/libfp_client.so
 lib64/libfpservice.so:vendor/lib64/libfpservice.so
 lib64/libfpnav.so:vendor/lib64/libfpnav.so
+vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service.land
+vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.land.rc
+vendor/lib64/libbindergx.so
 
 # Radio - MBN
 etc/firmware/modem_config/S88537AA1/cu_mcfg_sw.mbn:vendor/firmware/modem_config/S88537AA1/cu_mcfg_sw.mbn

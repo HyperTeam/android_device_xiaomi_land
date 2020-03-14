@@ -64,4 +64,12 @@ BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
 
 sed -i "s|/system/etc/camera|/vendor/etc/camera|g" "$BLOB_ROOT"/vendor/lib/libmmcamera2_sensor_modules.so
 
+DEVICE_BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
+
+patchelf --replace-needed libbinder.so libgxbinder.so "$DEVICE_BLOB_ROOT"/vendor/bin/gx_fpcmd
+patchelf --replace-needed libbinder.so libgxbinder.so "$DEVICE_BLOB_ROOT"/vendor/bin/gx_fpd
+patchelf --replace-needed libbinder.so libgxbinder.so "$DEVICE_BLOB_ROOT"/vendor/lib64/hw/fingerprint.goodix.so
+patchelf --replace-needed libbinder.so libgxbinder.so "$DEVICE_BLOB_ROOT"/vendor/lib64/libfp_client.so
+patchelf --replace-needed libbinder.so libgxbinder.so "$DEVICE_BLOB_ROOT"/vendor/lib64/libfpservice.so
+
 "$MY_DIR"/setup-makefiles.sh
